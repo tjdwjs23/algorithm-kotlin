@@ -1,5 +1,3 @@
 # programmers-kotlin
 
-======================================================================
-
-## Algorithm
+## Algorithm Practice
