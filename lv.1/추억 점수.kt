@@ -8,7 +8,11 @@
 
 class Solution {
     fun solution(name: Array<String>, yearning: IntArray, photo: Array<Array<String>>): List<Int> {
+        // name 배열과 yearning 배열을 사용하여 map을 생성합니다.
         val map = buildMap { (name.indices).forEach { put(name[it] ?: "", yearning[it]) } }
+        
+        // photo 배열을 순회하면서 각 배열의 항목들을 map에서 찾아 값을 가져와 합산합니다.
         return photo.map { strings -> strings.sumOf { value -> map[value] ?: 0 } }
     }
 }
+
