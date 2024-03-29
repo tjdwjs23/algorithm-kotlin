@@ -2,4 +2,4 @@
 
 ## Algorithm Practice
 
-Language : Kotlin 
+Language : Kotlin
