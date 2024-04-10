@@ -7,10 +7,18 @@
  */
 
 fun main() = System.`in`.bufferedReader().run {
+    // 사용자로부터 입력을 받아 정수 n을 읽습니다.
     val n = readLine()!!.toInt()
+
+    // tailrec 키워드를 사용한 꼬리 재귀 함수 fibo를 정의합니다.
+    // 이 함수는 n, pre, next를 인자로 받아 피보나치 수를 계산합니다.
     tailrec fun fibo(n: Int , pre:Int, next:Int): Int {
+        // 기저 조건: n이 0 이하일 경우, pre 값을 반환합니다.
         if (n <= 0) return pre
+        // 재귀 호출: n을 1 감소시키고, pre에는 next 값을, next에는 pre와 next의 합을 넣어 호출합니다.
         return fibo(n - 1, next, pre +next)
     }
+
+    // fibo 함수를 호출하여 결과를 출력합니다. 초기 pre 값은 0, next 값은 1로 설정합니다.
     print(fibo(n,0,1))
 }
