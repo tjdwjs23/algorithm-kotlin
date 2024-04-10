@@ -43,8 +43,7 @@ fun main() = System.`in`.bufferedReader().run {
 
 // 주어진 두 숫자 사이의 스트라이크와 볼 개수 계산 함수
 private fun calculateStrikeAndBall(number: String, guess: String): Pair<Int, Int> {
-    var strike = 0
-    var ball = 0
+    var (strike, ball) = arrayOf(0, 0)
     // 각 자리별로 스트라이크와 볼 여부를 판단하여 개수를 계산
     for (i in number.indices) {
         if (number[i] == guess[i]) {
