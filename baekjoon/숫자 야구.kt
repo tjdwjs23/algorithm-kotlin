@@ -14,6 +14,7 @@
  * 민혁이의 물음들과 각각의 물음에 대한 영수의 답이 입력으로 주어질 때 영수가 생각하고 있을 가능성이 있는 답의 총 개수를 출력하는 프로그램을 작성하시오.
  */
 
+// Baseball 데이터 클래스 정의: 숫자(num), 스트라이크 수(strike), 볼 수(ball)를 포함합니다.
 data class Baseball(val num: String, val strike: Int, val ball: Int)
 
 fun main() = System.`in`.bufferedReader().run {
