@@ -7,10 +7,17 @@
  */
 
 fun main() {
+    // 사용자로부터 입력을 받아 정수로 변환. 입력이 잘못되었거나 없으면 프로그램 종료
     val n = readLine()?.toIntOrNull() ?: return
+
+    // 666부터 시작하는 무한 시퀀스 생성
     generateSequence(666) { it + 1 }
+        // 시퀀스의 각 요소를 문자열로 변환하여 "666"이 포함되어 있는지 확인
         .filter { it.toString().contains("666") }
+        // "666"을 포함하는 숫자 중 상위 n개만 선택
         .take(n)
+        // 선택된 n개 중 마지막 요소, 즉 n번째 "666"을 포함하는 숫자를 가져옴
         .last()
+        // 결과를 출력
         .also(::println)
 }
