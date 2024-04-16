@@ -41,12 +41,18 @@ class Solution {
             giftGraph[senderIndex][receiverIndex]++
         }
 
-        // 각 친구가 다른 친구들과 비교했을 때, 더 많은 선물을 주거나, 동일한 수의 선물을 주었으나 자신이 더 많이 받은 경우의 수를 세어 최댓값 반환
-        return (0 until friendsLength).map { i ->
-            (0 until friendsLength).count { j ->
-                i != j && (giftGraph[i][j] > giftGraph[j][i] ||
-                        (giftGraph[i][j] == giftGraph[j][i] && giftDegree[i] > giftDegree[j]))
+        // 각 친구가 다른 친구들과 비교했을 때, 더 많은 선물을 주거나, 동일한 수의 선물을 주었으나 자신이 더 많이 받은 경우의 수를 세어 최댓값 갱신
+        var maxGifts = 0
+        for (i in friends.indices) {
+            var count = 0
+            for (j in friends.indices) {
+                if (i != j && (giftGraph[i][j] > giftGraph[j][i] ||
+                        (giftGraph[i][j] == giftGraph[j][i] && giftDegree[i] > giftDegree[j]))) {
+                    count++
+                }
             }
-        }.maxOrNull() ?: 0
+            maxGifts = maxOf(maxGifts, count)
+        }
+        return maxGifts
     }
 }
