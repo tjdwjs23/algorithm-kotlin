@@ -9,7 +9,7 @@
 fun main() = System.`in`.bufferedReader().run {
     var count = 0
     for (i in 0 until 8) {
-        // 입력받은 문자열을 한 줄씩 읽어와서, 짝수 행이면서 'F'인 경우에만 카운트를 증가시킵니다.
+        // 입력받은 문자열을 한 줄씩 읽어 옵니다.
         val lines = readLine()
         lines.forEachIndexed { j, line ->
             // i행 과 j열의 합이 짝수이고, 해당 칸이 'F'인 경우 카운트를 증가시킵니다.
