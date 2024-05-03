@@ -12,6 +12,7 @@ class Solution {
             // 빈 병을 a개로 나눈 몫을 구하고, 그 몫에 b를 곱하여 콜라를 받습니다.
             val exchange = bottle / a
             count += exchange * b
+            // 콜라를 받은 후 남은 빈 병의 개수는 나머지로 구합니다.
             bottle = exchange * b + bottle % a
         }
         return count
