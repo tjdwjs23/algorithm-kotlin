@@ -9,6 +9,7 @@
  */
 
 fun main() = System.`in`.bufferedReader().run {
+    // 한줄을 입력받은 후 Int로 전환합니다
     val n = readLine()!!.toInt()
     // modifiedFibo 함수를 호출하여 결과를 출력합니다. 초기 pre 값은 0, next 값은 1로 설정합니다.
     print(modifiedFibo(n, 1, 1))
