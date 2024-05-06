@@ -13,6 +13,7 @@ class Solution {
         val queue = java.util.ArrayDeque<Int>()
         queue.add(0)
 
+        // 큐가 비어있지 않을때까지
         while (queue.isNotEmpty()) {
              // 현재 방문하는 방
             val currentRoom = queue.removeFirst()
