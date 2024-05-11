@@ -13,6 +13,7 @@
  */
 
 fun main() = System.in.bufferedReader().run {
+    // 대각선길이(D)와 높이비율(H), 너비비율(W)을 입력받습니다.
     val (D, H, W) = readLine()!!.split(' ').map { it.toInt() }
 
     // 대각선의 길이를 피타고라스 정리를 이용하여 구합니다.
