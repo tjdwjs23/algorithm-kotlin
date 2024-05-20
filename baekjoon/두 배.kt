@@ -23,7 +23,4 @@ fun main() = System.`in`.bufferedReader().run {
 }
 
 // x를 y로 만들기 위해 2를 곱하는 최소 횟수를 구하는 함수
-fun findMinimumTimes(x: Int, y: Int): Int {
-    // x가 y보다 작거나 같으면 0을 반환 (x가 y보다 작거나 같으면 2를 곱할 필요가 없음)
-    return if (x <= y) 0 else ceil(log2(x.toDouble() / y)).toInt()
-}
+fun findMinimumTimes(x: Int, y: Int): Int = if (x <= y) 0 else ceil(log2(x.toDouble() / y)).toInt()
