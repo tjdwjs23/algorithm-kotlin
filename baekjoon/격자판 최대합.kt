@@ -11,7 +11,6 @@
  * 최대합을 출력합니다.
  */
 
-
 fun main() = System.`in`.bufferedReader().run {
     val n = readLine().toInt()
     val grid = List(n) { readLine().split(' ').map { it.toInt() } }
