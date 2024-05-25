@@ -11,7 +11,6 @@
  * 공원을 나타내는 문자열 배열 park, 로봇 강아지가 수행할 명령이 담긴 문자열 배열 routes가 매개변수로 주어질 때, 로봇 강아지가 모든 명령을 수행 후 놓인 위치를 [세로 방향 좌표, 가로 방향 좌표] 순으로 배열에 담아 return 하도록 solution 함수를 완성해주세요.
  */
 
-
 class Solution {
     private fun findStart(park: Array<String>): MutableList<Int> {
         for (i in park.indices)
