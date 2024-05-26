@@ -1,7 +1,4 @@
 /**
- * 보물 성공
- * 시간 제한	메모리 제한	제출	정답	맞힌 사람	정답 비율
- * 2 초	128 MB	62679	42185	35939	69.347%
  * 문제
  * 옛날 옛적에 수학이 항상 큰 골칫거리였던 나라가 있었다. 이 나라의 국왕 김지민은 다음과 같은 문제를 내고 큰 상금을 걸었다.
  *
@@ -24,15 +21,10 @@ fun main() = System.`in`.bufferedReader().run {
     val n = readLine().toInt()
     val a = readLine().split(" ").map { it.toInt() }.sorted()
     val b = readLine().split(" ").map { it.toInt() }.sortedDescending()
-    var s = 0
 
-    for(i in 0 until n) {
-        val currentA = a[i]
-        val currentB = b[i]
-        s += (currentA * currentB)
-
+    var max = 0
+    repeat(n) {
+        max += A[it] * B[it]
     }
-
-    println(s)
-
+    println(max)
 }
