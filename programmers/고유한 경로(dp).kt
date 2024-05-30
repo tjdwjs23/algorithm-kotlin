@@ -18,7 +18,6 @@ class Solution {
                 dp[i][j] = dp[i - 1][j] + dp[i][j - 1]
             }
         }
-
         // 오른쪽 하단 코너의 값을 반환합니다. 이 값은 모든 유니크한 경로의 수입니다.
         return dp[m - 1][n - 1]
     }
