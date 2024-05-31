@@ -9,21 +9,22 @@
 
 class Solution {
     fun singleNumber(nums: IntArray): IntArray {
-        // bitmask을 이용한 풀이
+        // 모든 숫자를 XOR하여 두 개의 고유한 숫자의 XOR 결과를 얻음
         var bitmask = 0
-        // bitmask에는 두 개의 single number를 xor한 결과가 저장됩니다.
         for (num in nums) bitmask = bitmask xor num
 
-        // bitmask의 가장 오른쪽에 있는 1을 찾습니다.
+        // 두 숫자가 다르게 되는 첫 번째 비트를 찾음
+        // 이 비트는 두 숫자가 서로 다르다는 것을 나타냄
         val diff = bitmask and (-bitmask)
 
+        // 첫 번째 고유한 숫자를 찾음
+        // diff 비트가 1인 숫자들을 XOR하여 첫 번째 고유한 숫자를 찾음
         var x = 0
-        // bitmask을 기준으로 두 개의 single number를 구분합니다.
         for (num in nums)
-            // bitmask과 diff를 이용해 두 개의 single number를 구분합니다.
             if ((num and diff) != 0)
                 x = x xor num
-        // x와 bitmask을 xor하면 나머지 single number를 구할 수 있습니다.
+
+        // 첫 번째 고유한 숫자 x와 bitmask를 XOR하여 두 번째 고유한 숫자를 찾음
         return intArrayOf(x, bitmask xor x)
     }
 }
