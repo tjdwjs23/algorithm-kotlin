@@ -26,4 +26,5 @@ fun main() = System.`in`.bufferedReader().run {
     result += minOf(N % 6 * minOne, minSix)
 
     println(result)  // 최종 계산된 가격을 출력합니다.
+    
 }
