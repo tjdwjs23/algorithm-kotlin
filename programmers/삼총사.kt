@@ -13,9 +13,7 @@ class Solution {
         for (i in 0 until number.size) {
             for (j in i + 1 until number.size) {
                 for (k in j + 1 until number.size) {
-                    if (number[i] + number[j] + number[k] == 0) {
-                        count++
-                    }
+                    if (number[i] + number[j] + number[k] == 0) count++
                 }
             }
         }
