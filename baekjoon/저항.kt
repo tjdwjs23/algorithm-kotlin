@@ -19,6 +19,7 @@
  * 출력
  * 입력으로 주어진 저항의 저항값을 계산하여 첫째 줄에 출력한다.
  */
+
 fun main() = System.`in`.bufferedReader().run {
     // 사용자로부터 3개의 색깔 이름을 입력받아 처리
     Array(3) { readLine()!! }.mapIndexed { index, color ->
