@@ -29,6 +29,5 @@ class Solution {
         }
         // 모든 방을 방문했는지 확인
         return visited.all { it }
-
     }
 }
