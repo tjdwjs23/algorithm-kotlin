@@ -12,17 +12,26 @@
  */
 
 fun main() = System.`in`.bufferedReader().run {
-    // 테스트 케이스의 개수 C를 입력받음
+    // 첫 번째 줄에서 테스트 케이스의 개수 C를 읽어옵니다.
     val C = readLine().toInt()
+
+    // 테스트 케이스의 개수만큼 반복합니다.
     repeat(C) {
-        // 학생의 수 N과 N명의 점수를 입력받음
+        // 각 테스트 케이스의 점수 데이터를 읽어옵니다.
         val scores = readLine().split(" ").map { it.toInt() }
+
+        // 첫 번째 값은 학생의 수 N입니다.
         val N = scores[0]
-        // 평균을 구하고, 평균을 넘는 학생의 비율을 출력
+
+        // 첫 번째 값을 제외한 나머지 값들은 학생들의 점수입니다.
+        // 평균을 계산합니다.
         val avg = scores.drop(1).average()
-        // 평균을 넘는 학생의 수를 구함
+
+        // 평균을 넘는 점수의 개수를 셉니다.
         val count = scores.drop(1).count { it > avg }
-        // 평균을 넘는 학생의 비율을 출력
+
+        // 평균을 넘는 학생들의 비율을 계산하여 출력합니다.
+        // 소수점 셋째 자리까지 반올림하여 출력합니다.
         println("%.3f%%".format(count.toDouble() / N * 100))
     }
 }
