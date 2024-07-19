@@ -24,7 +24,6 @@ class Solution {
                 else -> return "No"
             }
         }
-
         return "Yes"
     }
 }
