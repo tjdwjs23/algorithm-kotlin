@@ -34,4 +34,5 @@ fun main() = System.`in`.bufferedReader().run {
     if(y < m) println("Y $y")
     else if(y > m) println("M $m")
     else println("Y M $y") // 같은 경우 Y와 M 모두 출력
+    
 }
