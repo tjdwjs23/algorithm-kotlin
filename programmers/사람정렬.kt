@@ -14,7 +14,7 @@
 class Solution {
     fun sortPeople(names: Array<String>, heights: IntArray): Array<String> {
         // names와 heights를 매핑합니다.
-        // TreeMap을 사용하면 키를 기준으로 정렬할 수 있습니다.
+        // TreeMap을 사용하면 키를 기준으로 정렬할 수 있습니다. (TreeMap에 객체를 저장하면 자동으로 정렬되는데, 키는 저장과 동시에 자동 오름차순으로 정렬된다.)
         val namesMap = TreeMap<Int,String>()
         // heights를 기준으로 내림차순으로 정렬합니다.
         heights.forEachIndexed { index, height ->
