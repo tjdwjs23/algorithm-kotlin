@@ -44,4 +44,5 @@ fun main() = System.`in`.bufferedReader().run {
 
     // 목적지인 (R-1, C-1)까지의 최소 거리를 출력합니다.
     println(visit[R - 1][C - 1])
+    
 }
