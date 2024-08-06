@@ -30,4 +30,5 @@ class Solution {
         // 최소 차이를 반환합니다.
         return min
     }
+    
 }
