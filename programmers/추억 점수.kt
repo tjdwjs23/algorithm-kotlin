@@ -14,5 +14,6 @@ class Solution {
         // photo 배열을 순회하면서 각 배열의 항목들을 map에서 찾아 값을 가져와 합산합니다.
         return photo.map { strings -> strings.sumOf { value -> map[value] ?: 0 } }
     }
+    
 }
 
