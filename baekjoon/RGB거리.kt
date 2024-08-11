@@ -39,5 +39,4 @@ fun main() = System.`in`.bufferedReader().run {
 
     // 마지막 집까지의 최소 비용을 출력합니다.
     println(minOf(a, b, c))
-    
 }
