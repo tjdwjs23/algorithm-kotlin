@@ -27,23 +27,27 @@
 
 
 class Solution {
-    fun lengthOfLongestSubstring(s: String): Int = slidingWindow(s)
+    fun lengthOfLongestSubstring(s: String): Int {
+        var maxLength = 0
+        var start = 0
+        val charIndexMap = mutableMapOf<Char, Int>()
 
-    fun slidingWindow(s: String): Int {
-        val n = s.length
-        val set = mutableSetOf<Char>()
-        var anser = 0
-        var i = 0
-        var j = 0
-        while (i < n && j < n) {
-            if (!set.contains(s[j])) {
-                set.add(s[j++])
-                // answer에서 j - i를 비교하여 더 큰 값을 저장합니다.
-                answer = answer.coerceAtLeast(j - i)
-            } else {
-                set.remove(s[i++])
+        for (end in s.indices) {
+            val currentChar = s[end]
+
+            // 중복된 문자가 있으면 start를 이동시킴
+            if (charIndexMap.containsKey(currentChar)) {
+                // start를 중복된 문자 이후로 이동시킴
+                start = maxOf(start, charIndexMap[currentChar]!! + 1)
             }
+
+            // 현재 문자의 위치를 갱신
+            charIndexMap[currentChar] = end
+
+            // 윈도우 크기를 계산하여 최대값 갱신
+            maxLength = maxOf(maxLength, end - start + 1)
         }
-        return answer
+
+        return maxLength
     }
 }
